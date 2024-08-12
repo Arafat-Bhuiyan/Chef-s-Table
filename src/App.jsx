@@ -1,16 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import About from './components/About/About'
+import Home from './components/Home/Home'
+import Navbar from './components/Navbar/Navbar'
+import Recipes from './components/Recipes/Recipes'
+import Search from './components/Search/Search'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
-      <h1 className='text-4xl font-bold'>Recipe Calories</h1>
-      
+      <BrowserRouter>
+      <div className='max-w-screen-xl mx-auto'>
+      <Navbar></Navbar>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/recipes' element={<Recipes />}></Route>
+          <Route path='/about' element={<About />}></Route>
+          <Route path='/search' element={<Search />}></Route>
+        </Routes>
+      </div>
+      </BrowserRouter>
     </>
   )
 }
