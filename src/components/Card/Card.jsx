@@ -24,7 +24,7 @@ const Card = ({ recipeCard }) => {
                     <p>{calories}</p>
                 </div>
 
-                <button className='w-[9.5rem] bg-emerald-500 hover:bg-slate-50 rounded-full px-6 py-3 text-black font-semibold'>
+                <button className='w-[9.5rem] bg-emerald-500 hover:bg-slate-900 hover:text-white rounded-full px-6 py-3 text-black font-semibold'>
                     Want to Cook
                 </button>
             </div>
