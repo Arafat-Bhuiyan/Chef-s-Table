@@ -3,7 +3,7 @@ import BannerImg from '../../assets/img/close-up-person-cooking.jpg'
 const Banner = () => {
     return (
         <div>
-            <div className='px-10 relative'>
+            <div className='relative'>
                 <img className='rounded-3xl object-cover w-full h-[600px]' src={BannerImg} alt="" />
                 <div class="absolute top-0 w-[93.5%] h-[600px] bg-gray-800 opacity-70 px-10 rounded-3xl"></div>
 
