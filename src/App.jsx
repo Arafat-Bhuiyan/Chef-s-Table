@@ -11,15 +11,15 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className='max-w-screen-xl mx-auto'>
-      <Navbar></Navbar>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/recipes' element={<Recipes />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/search' element={<Search />}></Route>
-        </Routes>
-      </div>
+        <div className='max-w-screen-xl mx-auto'>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/recipes' element={<Recipes />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/search' element={<Search />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </>
   )

@@ -1,4 +1,5 @@
 import "./CookItem.css"
+import PropTypes from "prop-types";
 
 const CookItem = ({item, index, handlePrepare}) => {
     const { recipe_name, preparing_time, calories} = item;
@@ -14,7 +15,7 @@ const CookItem = ({item, index, handlePrepare}) => {
                         <td>{preparing_time} min</td>
                         <td>{calories} calories</td>
                         <td>
-                            <button onClick={() => handlePrepare(index)} className="bg-emerald-500 hover:bg-slate-900 hover:text-white rounded-full px-3 py-2 text-sm text-black font-semibold">Preparing</button>
+                            <button onClick={() => handlePrepare(item)} className="bg-emerald-500 hover:bg-slate-900 hover:text-white rounded-full px-3 py-2 text-sm text-black font-semibold">Preparing</button>
                         </td>
                     </tr>
                 </table>
@@ -24,3 +25,9 @@ const CookItem = ({item, index, handlePrepare}) => {
 };
 
 export default CookItem;
+
+CookItem.propTypes = {
+    item: PropTypes.object.isRequired,
+    index: PropTypes.number.isRequired,
+    handlePrepare: PropTypes.func.isRequired
+}

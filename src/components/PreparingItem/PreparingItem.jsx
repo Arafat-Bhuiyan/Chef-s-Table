@@ -1,4 +1,5 @@
 import "./PreparingItem.css"
+import PropTypes from "prop-types";
 
 const PreparingItem = ({ item, idx }) => {
     const { recipe_name, preparing_time, calories } = item;
@@ -22,3 +23,8 @@ const PreparingItem = ({ item, idx }) => {
 };
 
 export default PreparingItem;
+
+PreparingItem.propTypes = {
+    item: PropTypes.object.isRequired,
+    idx: PropTypes.number.isRequired
+}

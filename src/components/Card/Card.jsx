@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFire, faClock } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 const Card = ({ recipeCard, handleCook }) => {
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipeCard;
@@ -24,7 +25,7 @@ const Card = ({ recipeCard, handleCook }) => {
 
                 <div className="flex gap-5 text-sm font-normal text-slate-700">
                     <p><FontAwesomeIcon icon={faClock} /> {preparing_time} min</p>
-                    <p><FontAwesomeIcon icon={faFire}/> {calories} calories</p>
+                    <p><FontAwesomeIcon icon={faFire} /> {calories} calories</p>
                 </div>
 
                 <button onClick={() => handleCook(recipeCard)} className='w-[9.5rem] bg-emerald-500 hover:bg-slate-900 hover:text-white rounded-full px-6 py-3 text-black font-semibold'>
@@ -36,3 +37,8 @@ const Card = ({ recipeCard, handleCook }) => {
 };
 
 export default Card;
+
+Card.propTypes = {
+    recipeCard: PropTypes.object.isRequired,
+    handleCook: PropTypes.func.isRequired
+}

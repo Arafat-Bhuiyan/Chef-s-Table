@@ -5,8 +5,8 @@ const Home = () => {
     return (
         <div>
             <div className="px-10">
-                <Banner></Banner>
-                <Cards></Cards>
+                <Banner />
+                <Cards />
             </div>
         </div>
     );

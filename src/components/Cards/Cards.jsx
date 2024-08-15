@@ -4,6 +4,8 @@ import WantToCook from "../WantToCook/WantToCook";
 
 const Cards = () => {
     const [recipeCards, setRecipeCards] = useState([]);
+    const [wantToCook, setWantToCook] = useState([]);
+    const [preparing, setPreparing] = useState([]);
 
     useEffect(() => {
         fetch('recipe_card.json')
@@ -11,32 +13,31 @@ const Cards = () => {
             .then(data => setRecipeCards(data))
     }, [])
 
-    const [wantToCook, setWantToCook] = useState([]);
-    const handleCook = (recipeCard) => {  
+    // #region handleCook 
+    const handleCook = (recipeCard) => {
         // Check if the recipe is already in wantToCook
-    const isAlreadyAdded = wantToCook.some(item => item.id === recipeCard.id);
-    
-    if (!isAlreadyAdded) {
-        const newWantToCook = [...wantToCook, recipeCard];
-        setWantToCook(newWantToCook);
-    }
+        const isAlreadyAdded = wantToCook.some(item => item.id === recipeCard.id);
+
+        if (!isAlreadyAdded) {
+            const newWantToCook = [...wantToCook, recipeCard];
+            setWantToCook(newWantToCook);
+        }
     }
 
-    const [preparing, setPreparing] = useState([]);
-
-    const handlePrepare = (index) => {
-        const itemToMove = wantToCook[index];
-        // Remove the item from wantToCook
-        const remaining = wantToCook.filter((_, i) => i !== index);
+    // #region handlePrepare
+    const handlePrepare = (prepareItem) => {
+        console.log(prepareItem, wantToCook);
+        const remaining = wantToCook.filter((cookItem) => cookItem.id !== prepareItem.id);
         setWantToCook(remaining);
-        // add the item to preparing
-        const newPreparing = [...preparing, itemToMove];
-        setPreparing(newPreparing);
-    };
+        console.log(remaining);
 
-     // Calculate total preparation time and calories
-     const totalPreparationTime = preparing.reduce((total, recipe) => total + recipe.preparing_time, 0);
-     const totalCalories = preparing.reduce((total, recipe) => total + recipe.calories, 0);
+        const newPreparing = [...preparing, prepareItem];
+        setPreparing(newPreparing);
+    }
+
+    // #region Total Time
+    const totalPreparationTime = preparing.reduce((total, recipe) => total + recipe.preparing_time, 0);
+    const totalCalories = preparing.reduce((total, recipe) => total + recipe.calories, 0);
 
 
     return (
@@ -55,11 +56,17 @@ const Cards = () => {
                                 key={recipeCard.id}
                                 recipeCard={recipeCard}
                                 handleCook={handleCook}
-                            ></Card>)
+                            />)
                         }
                     </div>
 
-                    <WantToCook wantToCook={wantToCook} handlePrepare={handlePrepare} preparing={preparing} totalPreparationTime={totalPreparationTime} totalCalories={totalCalories} ></WantToCook>
+                    <WantToCook 
+                    wantToCook={wantToCook} 
+                    handlePrepare={handlePrepare} 
+                    preparing={preparing} 
+                    totalPreparationTime={totalPreparationTime} 
+                    totalCalories={totalCalories} 
+                    />
 
                 </div>
             </div>

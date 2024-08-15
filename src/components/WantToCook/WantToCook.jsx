@@ -1,6 +1,7 @@
 import CookItem from "../CookItem/CookItem";
 import PreparingItem from "../PreparingItem/PreparingItem";
 import "./WantToCook.css"
+import PropTypes from "prop-types";
 
 const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime, totalCalories }) => {
 
@@ -76,3 +77,11 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
 };
 
 export default WantToCook;
+
+WantToCook.propTypes = {
+    wantToCook: PropTypes.array.isRequired,
+    handlePrepare: PropTypes.func.isRequired,
+    preparing: PropTypes.array.isRequired,
+    totalPreparationTime: PropTypes.number.isRequired,
+    totalCalories: PropTypes.number.isRequired
+}
