@@ -17,7 +17,11 @@ const Card = ({ recipeCard, handleCook }) => {
                     <p className="font-medium text-lg">Ingredients: {ingredients.length}</p>
                     <ul className="list-disc px-8 pt-2 font-normal text-base text-slate-500">
                         {
-                            ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)
+                            ingredients.map((ingredient, index) => 
+                            <li
+                                key={index}>
+                                {ingredient}
+                            </li>)
                         }
                     </ul>
                 </div>

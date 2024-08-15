@@ -27,7 +27,8 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
                     </table>
 
                     {
-                        wantToCook.map((item, index) => <CookItem
+                        wantToCook.map((item, index) => 
+                        <CookItem
                             key={index}
                             index={index}
                             item={item}
@@ -55,7 +56,8 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
                         </table>
 
                         {
-                            preparing.map((item, idx) => <PreparingItem
+                            preparing.map((item, idx) => 
+                            <PreparingItem
                                 key={idx}
                                 idx={idx}
                                 item={item}

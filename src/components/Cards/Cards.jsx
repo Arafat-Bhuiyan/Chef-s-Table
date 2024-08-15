@@ -52,7 +52,8 @@ const Cards = () => {
 
                     <div className="grid grid-cols-2 gap-2">
                         {
-                            recipeCards.map(recipeCard => <Card
+                            recipeCards.map(recipeCard => 
+                            <Card
                                 key={recipeCard.id}
                                 recipeCard={recipeCard}
                                 handleCook={handleCook}
@@ -61,11 +62,11 @@ const Cards = () => {
                     </div>
 
                     <WantToCook 
-                    wantToCook={wantToCook} 
-                    handlePrepare={handlePrepare} 
-                    preparing={preparing} 
-                    totalPreparationTime={totalPreparationTime} 
-                    totalCalories={totalCalories} 
+                        wantToCook={wantToCook} 
+                        handlePrepare={handlePrepare} 
+                        preparing={preparing} 
+                        totalPreparationTime={totalPreparationTime} 
+                        totalCalories={totalCalories} 
                     />
 
                 </div>
