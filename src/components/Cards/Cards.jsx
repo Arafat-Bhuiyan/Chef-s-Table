@@ -26,11 +26,10 @@ const Cards = () => {
 
     // #region handlePrepare
     const handlePrepare = (prepareItem) => {
-        console.log(prepareItem, wantToCook);
+        // Remove the item from wantToCook
         const remaining = wantToCook.filter((cookItem) => cookItem.id !== prepareItem.id);
         setWantToCook(remaining);
-        console.log(remaining);
-
+        // Add to preparing
         const newPreparing = [...preparing, prepareItem];
         setPreparing(newPreparing);
     }
