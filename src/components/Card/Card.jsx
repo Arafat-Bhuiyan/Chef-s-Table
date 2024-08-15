@@ -18,7 +18,7 @@ const Card = ({ recipeCard, handleCook }) => {
                     <ul className="list-disc px-8 pt-2 font-normal text-base text-slate-500">
                         {
                             ingredients.map((ingredient, index) => 
-                            <li
+                                <li
                                 key={index}>
                                 {ingredient}
                             </li>)

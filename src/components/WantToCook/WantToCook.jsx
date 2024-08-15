@@ -17,13 +17,15 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
                     </div>
                     <table id="table-container">
                         {/* Table header */}
-                        <tr className="font-medium text-base">
-                            <th></th>
-                            <th>Name</th>
-                            <th>Time</th>
-                            <th>Calories</th>
-                            <th></th>
-                        </tr>
+                        <thead>
+                            <tr className="font-medium text-base">
+                                <th />
+                                <th>Name</th>
+                                <th>Time</th>
+                                <th>Calories</th>
+                                <th />
+                            </tr>
+                        </thead>
                     </table>
 
                     {
@@ -46,13 +48,15 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
                     <div>
                         <table id="table-container">
                             {/* Table header */}
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Time</th>
-                                <th>Calories</th>
-                                <th></th>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th />
+                                    <th>Name</th>
+                                    <th>Time</th>
+                                    <th>Calories</th>
+                                    <th />
+                                </tr>
+                            </thead>
                         </table>
 
                         {

@@ -5,7 +5,7 @@ const Banner = () => {
         <div>
             <div className='relative'>
                 <img className='rounded-3xl object-cover w-full h-[600px]' src={BannerImg} alt="" />
-                <div class="absolute top-0 w-[93.5%] h-[600px] bg-gray-800 opacity-70 px-10 rounded-3xl"></div>
+                <div className="absolute top-0 w-[93.5%] h-[600px] bg-gray-800 opacity-70 px-10 rounded-3xl"></div>
 
                 <div className='flex flex-col gap-8 text-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
                     <h3 className='text-4xl font-bold text-white'>Discover an exceptional cooking <br /> class tailored for you!</h3>
