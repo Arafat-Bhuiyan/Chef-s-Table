@@ -1,44 +1,46 @@
+import { useState } from "react";
+import CookItem from "../CookItem/CookItem";
+import PreparingItem from "../PreparingItem/PreparingItem";
 import "./WantToCook.css"
+import Total from "../Total/Total";
 
-const WantToCook = () => {
+const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime, totalCalories }) => {
+
     return (
         <div>
             <div className="border-2 border-slate-200 w-[514px] max-h-full flex flex-col gap-5 rounded-xl">
+
                 {/* Want to cook */}
                 <div>
                     <div className="flex flex-col items-center pt-3">
-                        <h1 className="text-2xl font-semibold p-2">Want to Cook: 01</h1>
+                        <h1 className="text-2xl font-semibold p-2">Want to Cook: {wantToCook.length}</h1>
                         <div className="border-b-2 border-slate-300 w-[350px]"></div>
                     </div>
-                    <div>
-                        <table id="table-container">
-                            {/* Table header */}
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Time</th>
-                                <th>Calories</th>
-                                <th></th>
-                            </tr>
+                    <table id="table-container">
+                        {/* Table header */}
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Calories</th>
+                            <th></th>
+                        </tr>
+                    </table>
 
-                            {/* Table data */}
-                            <tr >
-                                <td>1</td>
-                                <td>Chicken Caesar Salad</td>
-                                <td>10 min</td>
-                                <td>100 cal</td>
-                                <td>
-                                    <button className="bg-emerald-500 hover:bg-slate-900 hover:text-white rounded-full px-3 py-2 text-sm text-black font-semibold">Preparing</button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    {
+                        wantToCook.map((item, index) => <CookItem
+                            key={index}
+                            index={index}
+                            item={item}
+                            handlePrepare={handlePrepare}
+                        ></CookItem>)
+                    }
                 </div>
 
                 {/* Currently cooking */}
                 <div>
                     <div className="flex flex-col items-center pt-3">
-                        <h1 className="text-2xl font-semibold p-2">Currently cooking: 01</h1>
+                        <h1 className="text-2xl font-semibold p-2">Currently cooking: {preparing.length}</h1>
                         <div className="border-b-2 border-slate-300 w-[350px]"></div>
                     </div>
                     <div>
@@ -51,23 +53,33 @@ const WantToCook = () => {
                                 <th>Calories</th>
                                 <th></th>
                             </tr>
-
-                            {/* Table data */}
-                            <tr >
-                                <td>1</td>
-                                <td>Chicken Caesar Salad</td>
-                                <td>10 min</td>
-                                <td>100 cal</td>
-                                <td></td>
-                            </tr>
                         </table>
+
+                        {
+                            preparing.map((item, idx) => <PreparingItem
+                                key={idx}
+                                idx={idx}
+                                item={item}
+                            ></PreparingItem>)
+                        }
+
                     </div>
                 </div>
 
                 {/* Total time and calories */}
+
+                {/* {
+                    preparing.map((item, idx) => <Total
+                        key={idx}
+                        idx={idx}
+                        item={item}
+                    ></Total>)
+
+                } */}
+
                 <div className="pb-3 pl-2 text-sm text-gray-700 font-semibold">
-                    <h1>Total time: 45 minutes</h1>
-                    <h1>Total Calories: 1050 calories</h1>
+                    <h1>Total time: {totalPreparationTime} minutes</h1>
+                    <h1>Total Calories: {totalCalories} calories</h1>
                 </div>
             </div>
 
