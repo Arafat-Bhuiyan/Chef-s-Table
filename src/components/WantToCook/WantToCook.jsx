@@ -1,8 +1,6 @@
-import { useState } from "react";
 import CookItem from "../CookItem/CookItem";
 import PreparingItem from "../PreparingItem/PreparingItem";
 import "./WantToCook.css"
-import Total from "../Total/Total";
 
 const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime, totalCalories }) => {
 
@@ -18,7 +16,7 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
                     </div>
                     <table id="table-container">
                         {/* Table header */}
-                        <tr>
+                        <tr className="font-medium text-base">
                             <th></th>
                             <th>Name</th>
                             <th>Time</th>
@@ -67,17 +65,7 @@ const WantToCook = ({ wantToCook, handlePrepare, preparing, totalPreparationTime
                 </div>
 
                 {/* Total time and calories */}
-
-                {/* {
-                    preparing.map((item, idx) => <Total
-                        key={idx}
-                        idx={idx}
-                        item={item}
-                    ></Total>)
-
-                } */}
-
-                <div className="pb-3 pl-2 text-sm text-gray-700 font-semibold">
+                <div className="pb-3 pl-2 text-base font-medium text-slate-600">
                     <h1>Total time: {totalPreparationTime} minutes</h1>
                     <h1>Total Calories: {totalCalories} calories</h1>
                 </div>

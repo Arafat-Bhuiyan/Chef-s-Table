@@ -8,7 +8,7 @@ const PreparingItem = ({ item, idx }) => {
             <div>
                 <table id="table-container">
                     {/* Table data */}
-                    <tr >
+                    <tr className="text-base font-normal text-slate-600">
                         <td>{idx + 1}</td>
                         <td>{recipe_name}</td>
                         <td>{preparing_time} min</td>

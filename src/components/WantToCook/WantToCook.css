@@ -12,11 +12,11 @@
 }
 
 #table-container tr:nth-child(even) {
-    background-color: #f2f2f2cc;
+    background-color: #f2f2f2cc !important;
 }
 
 #table-container th {
-    color: #949393;
+    color: #878787; 
     padding-top: 12px;
     padding-bottom: 12px;
 }
